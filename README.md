@@ -1,7 +1,7 @@
 # Task4_SQL
 # 🧮 Task 4 – SQL for Data Analysis
 
-This project demonstrates SQL-based data analysis using a custom SQLite database as part of my internship assignment. The dataset contains detailed sales transactions, and the analysis focuses on extracting insights using SQL queries.
+This task involves using SQL queries to analyze sales data and extract meaningful insights from a database using *DB Browser for SQLite*.
 
 ---
 
