@@ -41,25 +41,25 @@ WHERE Region = 'South';
 
 
 ### 2. Top Customers by Profit
-SELECT Customer_Name, Sales, Profit
+`SELECT Customer_Name, Sales, Profit
 FROM sales_data
-ORDER BY Profit DESC;
+ORDER BY Profit DESC;`
 
 ### 3. Regional Performance Summary
-SELECT Region, SUM(Sales) AS Total_Sales, AVG(Profit) AS Avg_Profit
+`SELECT Region, SUM(Sales) AS Total_Sales, AVG(Profit) AS Avg_Profit
 FROM sales_data
-GROUP BY Region;
+GROUP BY Region;`
 
 ### 4. Customers with Above-Average Sales
-SELECT Customer_Name, Sales
+`SELECT Customer_Name, Sales
 FROM sales_data
-WHERE Sales > (SELECT AVG(Sales) FROM sales_data);
+WHERE Sales > (SELECT AVG(Sales) FROM sales_data);`
 
 ### 5. Create View for Regional Performance
-CREATE VIEW Regional_Performance AS
+`CREATE VIEW Regional_Performance AS
 SELECT Region, SUM(Sales) AS Total_Sales, SUM(Profit) AS Total_Profit
 FROM sales_data
-GROUP BY Region;
+GROUP BY Region;`
 
 ## 📊 Insights Extracted
 - Identified *top-performing customers* by profit.
