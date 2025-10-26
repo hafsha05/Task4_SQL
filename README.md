@@ -81,6 +81,7 @@ GROUP BY Region;`
 - *HAVING* is used to filter groups *after* aggregation (used with GROUP BY).
 
 🧩 Example:
+
 `SELECT Region, SUM(Sales)
 FROM sales_data
 WHERE Sales > 1000
@@ -97,6 +98,7 @@ HAVING SUM(Sales) > 5000;`
  `SELECT AVG(revenue) AS avg_revenue_per_user
 FROM users;`
 -If revenue is stored in a separate transaction table:
+
 `SELECT user_id, SUM(revenue)/COUNT(DISTINCT user_id) AS avg_revenue_per_user
 FROM transactions;`
 
@@ -118,5 +120,6 @@ FROM transactions;`
 ### 7. How would you handle null values in SQL?
 -Use IS NULL or IS NOT NULL to check for nulls.
 -Use COALESCE() or IFNULL() to replace nulls with default values.
+
 `SELECT name, COALESCE(phone, 'Not Provided') AS phone_number
 FROM customers;`
