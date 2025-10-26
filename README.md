@@ -35,7 +35,42 @@ The database includes a single table: `sales_data`, created and populated using 
 ### 🔍 Query Examples
 
 #### 1. Filter by Region
-```sql
+
 SELECT * FROM sales_data
 WHERE Region = 'South';
 
+
+### 2. Top Customers by Profit
+SELECT Customer_Name, Sales, Profit
+FROM sales_data
+ORDER BY Profit DESC;
+
+### 3. Regional Performance Summary
+SELECT Region, SUM(Sales) AS Total_Sales, AVG(Profit) AS Avg_Profit
+FROM sales_data
+GROUP BY Region;
+
+### 4. Customers with Above-Average Sales
+SELECT Customer_Name, Sales
+FROM sales_data
+WHERE Sales > (SELECT AVG(Sales) FROM sales_data);
+
+### 5. Create View for Regional Performance
+CREATE VIEW Regional_Performance AS
+SELECT Region, SUM(Sales) AS Total_Sales, SUM(Profit) AS Total_Profit
+FROM sales_data
+GROUP BY Region;
+
+## 📊 Insights Extracted
+- Identified *top-performing customers* by profit.
+- Compared *total sales and average profit* across regions.
+- Filtered *high-value transactions* based on sales thresholds.
+- Created *reusable SQL views* for regional performance analysis.
+
+## 📁 Files Included
+- Task4_SQL_Quries.sql — SQL script for table creation and data insertion.
+- Output_Screenshots.pdf — Screenshots of SQL queries and results from DB Browser for SQLite.
+
+## 🧰 Tools Used
+- *DB Browser for SQLite*
+- *SQL*
